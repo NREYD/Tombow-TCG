@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tombow TCC - Premium TCG Card Design</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --glass-bg: rgba(255,255,255,0.1); --glass-border: rgba(255,255,255,0.2); }
+    .glass { background: var(--glass-bg); backdrop-filter: blur(20px); border:1px solid var(--glass-border); box-shadow: 0 8px 32px rgba(0,0,0,0.37); }
+    .glass-panel { position: relative; margin: 1rem auto; max-width: 60rem; border-radius: 1rem; overflow: hidden; }
+    .expanded {
+      position: fixed !important;
+      top: 5% !important;
+      left: 5% !important;
+      width: 90vw !important;
+      height: 90vh !important;
+      max-width: none !important;
+      border-radius: 1rem !important;
+      z-index: 50 !important;
+    }
+    .expanded .default-content { display: none; }
+    .expanded .expanded-content > * { opacity: 0; }
+    #overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 40;
+      transition: opacity 0.4s ease;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white overflow-x-hidden">
+
+  <div id="overlay"></div>
+
+  <!-- Hero -->
+  <section id="hero" class="relative flex items-center justify-center h-screen">
+    <div id="hero-bg" class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image:url('https://source.unsplash.com/1600x900/?cards,table');"></div>
+    <div class="relative text-center z-10 glass inline-block p-8 rounded-sm max-w-xl">
+      <h1 id="hero-title" class="text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Tombow TCC</h1>
+      <p id="hero-sub" class="text-xl mb-6">Premium Trading Card Design</p>
+      <div id="hero-card" class="vanilla-tilt inline-block w-65 h-96 shadow-2xl rounded-xl overflow-hidden mx-auto bg-black">
+      <img src="images.jpg" alt="TCG Card Example" class="w-full h-full object-cover" style="object-position: center;" />
+    </div>
+    </div>
+  </section>
+
+  <!-- Sections -->
+  <main class="space-y-16 py-16">
+    <!-- 1. Legal & Regulations -->
+    <section class="glass-panel glass p-12">
+      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Legal & Regulations</h2>
+      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+      <div class="default-content space-y-4">
+        <p class="text-gray-200">We adhere to consumer protection laws, clear labeling, loot‑box regulations, and robust return policies for damaged goods. Our design and copyright practices ensure unique artwork and respect trademark requirements. We secure licensing agreements with sports leagues to feature player likenesses.</p>
+      </div>
+      <div class="expanded-content space-y-4">
+        <p class="text-gray-200">Full-screen details for Legal & Regulations. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
+      </div>
+    </section>
+
+    <!-- 2. Societal Trends -->
+    <section class="glass-panel glass p-12 lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse">
+      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4 lg:mb-0">Societal Trends</h2>
+      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+      <div class="default-content lg:w-1/2 space-y-4">
+        <img src="https://source.unsplash.com/600x400/?sustainability" alt="Societal Trends" class="rounded-lg shadow-md mb-4 object-cover" />
+        <p class="text-gray-200">We embrace eco‑friendly materials and recycled packaging to meet consumer values. Limited‑edition drops and rare insert cards build hype and engage both casual and hardcore collectors.</p>
+        <ul class="list-disc list-inside text-gray-200">
+          <li>Recycled & recyclable packaging</li>
+          <li>Exclusive limited‑edition releases</li>
+          <li>Multi‑audience product lines</li>
+        </ul>
+      </div>
+      <div class="expanded-content lg:w-1/2 space-y-4">
+        <p class="text-gray-200">Full-screen details for Societal Trends. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+      </div>
+    </section>
+
+    <!-- 3. Economic Outlook -->
+    <section class="glass-panel glass p-12">
+      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Economic Outlook</h2>
+      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+      <div class="default-content space-y-4">
+        <p class="text-gray-200">We adjust pricing and sourcing strategies in response to interest and tax rate fluctuations, ensuring affordability without compromising quality. We optimize costs by diversifying suppliers and leveraging favorable exchange rates.</p>
+      </div>
+      <div class="expanded-content space-y-4">
+        <p class="text-gray-200">Full-screen details for Economic Outlook. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </section>
+
+    <!-- 4. Innovation & Technology -->
+    <section class="glass-panel glass p-12 lg:flex lg:items-center lg:space-x-8">
+      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Innovation & Technology</h2>
+      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+      <div class="default-content lg:w-1/2 space-y-4">
+        <img src="https://source.unsplash.com/600x400/?technology,ai" alt="Innovation & Technology" class="rounded-lg shadow-md mb-4 object-cover" />
+        <p class="text-gray-200">AI‑driven material forecasting and customer loyalty systems optimize production. We explore augmented reality integrations and rapid prototyping to bring your card concepts to market faster.</p>
+      </div>
+      <div class="expanded-content lg:w-1/2 space-y-4">
+        <p class="text-gray-200">Full-screen details for Innovation & Technology. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
+      </div>
+    </section>
+
+    <!-- 5. Global Reach -->
+    <section class="glass-panel glass p-12 lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse">
+      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4 lg:mb-0">Global Reach</h2>
+      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+      <div class="default-content lg:w-1/2 space-y-4">
+        <img src="https://source.unsplash.com/600x400/?global,market" alt="Global Reach" class="rounded-lg shadow-md mb-4 object-cover" />
+        <p class="text-gray-200">Our online storefront and distribution network spans multiple continents, making premium card products accessible worldwide. We partner with international logistics providers to ensure reliable delivery.</p>
+      </div>
+      <div class="expanded-content lg:w-1/2 space-y-4">
+        <p class="text-gray-200">Full-screen details for Global Reach. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+      </div>
+    </section>
+
+    <!-- 6. CSR Initiatives -->
+    <section class="glass-panel glass p-12">
+      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Corporate Social Responsibility</h2>
+      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+      <div class="default-content space-y-4">
+        <p class="text-gray-200">We source materials from ethically‑compliant suppliers, ensure fair labor practices, and invest in community sponsorships. Our eco‑program supports local youth sports and educational initiatives.</p>
+      </div>
+      <div class="expanded-content space-y-4">
+        <p class="text-gray-200">Full-screen details for CSR Initiatives. Nulla porttitor accumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.</p>
+      </div>
+    </section>
+
+    <!-- 7. Customer Needs -->
+    <section class="glass-panel glass p-12 lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse">
+      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4 lg:mb-0">Customer Needs</h2>
+      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+      <div class="default-content lg:w-1/2 space-y-4">
+        <img src="https://source.unsplash.com/600x400/?customer,satisfaction" alt="Customer
+Needs" class="rounded-lg shadow-md mb-4 object-cover" />
+        <p class="text-gray-200">We deliver high‑quality printing options, protective accessories, and budget‑friendly pricing tiers. Our flexible order volumes and discount programs reward repeat customers.</p>
+      </div>
+      <div class="expanded-content lg:w-1/2 space-y-4">
+        <p class="text-gray-200">Full-screen details for Customer Needs. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+      </div>
+    </section>
+
+    <!-- 8. Competitive Advantage -->
+    <section class="glass-panel glass p-12">
+      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Competitive Advantage</h2>
+      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+      <div class="default-content space-y-4">
+        <p class="text-gray-200">Rather than competing on price alone, we focus on bespoke designs and premium materials. Our agility allows us to pivot quickly to market trends and maintain a unique product offering.</p>
+      </div>
+      <div class="expanded-content space-y-4">
+        <p class="text-gray-200">Full-screen details for Competitive Advantage. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+      </div>
+    </section>
+
+    <!-- 9. Supply Chain -->
+    <section class="glass-panel glass p-12 lg:flex lg:items-center lg:space-x-8 lg:flex-row-reverse">
+      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4 lg:mb-0">Supply Chain</h2>
+      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+      <div class="default-content lg:w-1/2 space-y-4">
+        <img src="https://source.unsplash.com/600x400/?supply,chain" alt="Supply Chain" class="rounded-lg shadow-md mb-4 object-cover" />
+        <p class="text-gray-200">We partner with sustainable material suppliers and maintain local production facilities for quality control. Strategic supplier diversification reduces risk and ensures timely fulfillment.</p>
+      </div>
+      <div class="expanded-content lg:w-1/2 space-y-4">
+        <p class="text-gray-200">Full-screen details for Supply Chain. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+      </div>
+    </section>
+
+    <!-- 10. Affinity & Industry Groups -->
+    <section class="glass-panel glass p-12">
+      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Affinity & Industry Groups</h2>
+      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+      <div class="default-content space-y-4">
+        <p class="text-gray-200">We engage with environmental NGOs, trade associations, and unions to align our practices with societal best interests. Our memberships facilitate ongoing compliance and networking.</p>
+      </div>
+      <div class="expanded-content space-y-4">
+        <p class="text-gray-200">Full-screen details for Affinity & Industry Groups. Donec sollicitudin molestie malesuada.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="glass-panel glass p-12 text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-4">Contact Us</h2>
+      <p class="text-gray-200 mb-6">Ready to bring your TCG vision to life? Reach out with your project details.</p>
+      <form class="max-w-lg mx-auto space-y-4">
+        <input type="text" placeholder="Name" class="w-full p-3 bg-white/20 rounded text-white" />
+        <input type="email" placeholder="Email" class="w-full p-3 bg-white/20 rounded text-white" />
+        <textarea placeholder="Project Details" class="w-full p-3 bg-white/20 rounded text-white h-32"></textarea>
+        <button type="submit" class="w-full py-3 bg-gradient-to-br from-purple-600 to-pink-500 rounded font-semibold">Send Inquiry</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- GSAP, Flip Plugin, ScrollTrigger & Vanilla Tilt -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/Flip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"></script>
+  <script>
+    // Hero animations and Tilt effect
+    VanillaTilt.init(document.querySelectorAll('.vanilla-tilt'), { max:25, speed:400, glare:true, 'max-glare':0.3 });
+    const heroTl = gsap.timeline();
+    heroTl.from('#hero-bg',{ scale:1.1, duration:1.5, ease:'power2.out' })
+          .from('#hero-title',{ y:-50, opacity:0, duration:1, ease:'bounce.out' },'<')
+          .from('#hero-sub',{ y:50, opacity:0, duration:1, ease:'power2.out' },'-=0.8')
+          .from('#hero-card',{ scale:0.8, opacity:0, duration:1, ease:'elastic.out(1,0.5)' },'-=0.8');
+
+    // Section reveal on scroll
+    gsap.utils.toArray('main section').forEach(sec=>{
+      gsap.from(sec.querySelector('.glass'),{
+        scrollTrigger:{ trigger:sec, start:'top 80%' },
+        opacity:0, y:50, duration:1, ease:'power2.out'
+      });
+    });
+
+    // Parallax effect
+    window.addEventListener('scroll',()=>{
+      gsap.to('#hero-bg',{ y: window.scrollY * 0.3, ease:'none', overwrite:true });
+    });
+
+    // Section expand/collapse logic
+    gsap.registerPlugin(Flip, ScrollTrigger);
+    const overlay = document.getElementById('overlay');
+    const sections = document.querySelectorAll('main section.glass-panel');
+    let tl;
+
+    sections.forEach(sec=>{
+      const heading = sec.querySelector('.section-heading');
+      const closeBtn = sec.querySelector('.close-btn');
+      heading && heading.addEventListener('click',()=>{
+        if (tl && tl.isActive()) return;
+        if (!sec.classList.contains('expanded')) expandSection(sec);
+      });
+      closeBtn.addEventListener('click',()=>{
+        if (tl) tl.reverse();
+      });
+    });
+
+    function expandSection(sec){
+      const others = Array.from(sections).filter(s=>s!==sec);
+      document.body.style.overflow = 'hidden';
+      tl = gsap.timeline({ defaults:{ ease:'power2.out' }, onReverseComplete(){
+        others.forEach(s=>s.style.display='');
+        sec.classList.remove('expanded');
+        gsap.set(sec, { clearProps:'all' });
+        sec.querySelector('.close-btn').classList.add('hidden');
+        overlay.style.pointerEvents = 'none';
+        overlay.style.opacity = 0;
+        document.body.style.overflow = '';
+      }});
+
+      // Show overlay
+      tl.to(overlay, { opacity:1, pointerEvents:'auto', duration:0.4 }, 0);
+
+      // Hide other sections
+      tl.to(others, { opacity:0, y:50, duration:0.5, stagger:0.1, onComplete:()=>others.forEach(s=>s.style.display='none') }, 0);
+
+      // Expand target
+      tl.add(()=>{
+        sec.classList.add('expanded');
+        sec.querySelector('.close-btn').classList.remove('hidden');
+      }, 0.3)
+      .to(sec, { width:'90vw', height:'90vh', top:'5%', left:'5%', duration:0.7 }, 0.3)
+
+      // Show expanded content
+      .fromTo(sec.querySelectorAll('.expanded-content > *'), { opacity:0, y:20 }, { opacity:1, y:0, duration:0.5, stagger:0.1 }, 1)
+      .fromTo(sec.querySelector('.close-btn'), { opacity:0 }, { opacity:1, duration:0.3 }, 1);
+
+      tl.play();
+    }
+  </script>
+</body>
+</html>

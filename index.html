@@ -34,6 +34,32 @@
       z-index: 40;
       transition: opacity 0.4s ease;
     }
+
+    /* Glassmorphic iframe container */
+    .iframe-glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 1rem;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 60vh; /* Adjust as needed */
+      margin-top: 1rem;
+    }
+    /* Hide native scrollbars inside iframe while allowing scroll */
+    .iframe-glass iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      /* Hide scrollbars in Firefox */
+      scrollbar-width: none;
+      /* Hide scrollbars in IE 10+ */
+      -ms-overflow-style: none;
+    }
+    .iframe-glass iframe::-webkit-scrollbar {
+      display: none; /* Hide scrollbars in WebKit-based browsers */
+    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white overflow-x-hidden">
@@ -54,125 +80,466 @@
 
   <!-- Sections -->
   <main class="space-y-16 py-16">
-    <!-- 1. Legal & Regulations -->
-    <section class="glass-panel glass p-12">
-      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Legal & Regulations</h2>
-      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
-      <div class="default-content space-y-4">
-        <p class="text-gray-200">We adhere to consumer protection laws, clear labeling, loot‑box regulations, and robust return policies for damaged goods.</p>
-      </div>
-      <div class="expanded-content space-y-4">
-        <p class="text-gray-200">Full-screen details for Legal & Regulations. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </section>
+<!-- 1. Legal & Regulations -->
+<section class="glass-panel glass p-12">
+  <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Legal & Regulations</h2>
+  <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+  <div class="default-content space-y-4">
+    <p class="text-gray-200">We adhere to consumer protection laws, clear labeling, loot-box regulations, and robust return policies for damaged goods.</p>
+  </div>
+  <div class="expanded-content space-y-4">
+    <!-- Consumer Protection Laws -->
+    <h3 class="text-2xl font-bold">Consumer Protection Laws</h3>
+    <p class="text-gray-200">
+      Making sure that we are following consumer protection laws, for example following things like label laws, loot-box regulations, and return and refund policies for damaged products.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.holdingredlich.com/is-your-refund-and-returns-policy-accc-compliant"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
 
-    <!-- 2. Societal Trends -->
-    <section class="glass-panel glass p-12">
-      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Societal Trends</h2>
-      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
-      <div class="default-content space-y-4">
-        <p class="text-gray-200">We embrace eco‑friendly materials and recycled packaging to meet consumer values. Limited‑edition drops and rare insert cards build hype and engage both casual and hardcore collectors.</p>
-      </div>
-      <div class="expanded-content space-y-4">
-        <p class="text-gray-200">Full-screen details for Societal Trends. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
-      </div>
-    </section>
+    <!-- Legal / Design & Copyright Laws -->
+    <h3 class="text-2xl font-bold">Legal / Design &amp; Copyright Laws</h3>
+    <p class="text-gray-200">
+      Design and copyright issues: making sure we use unique designs for our cards to avoid being sued for infringements. Also making sure we comply with trademark laws.
+    </p>
+    <div class="iframe-glass">
+      <!-- Replace “YOUR_VIDEO_EMBED_URL” with the actual embed URL for the video -->
+      <iframe
+        src="YOUR_VIDEO_EMBED_URL"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
 
-    <!-- 3. Economic Outlook -->
-    <section class="glass-panel glass p-12">
-      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Economic Outlook</h2>
-      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
-      <div class="default-content space-y-4">
-        <p class="text-gray-200">We adjust pricing and sourcing strategies in response to interest and tax rate fluctuations, ensuring affordability without compromising quality.</p>
-      </div>
-      <div class="expanded-content space-y-4">
-        <p class="text-gray-200">Full-screen details for Economic Outlook. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-    </section>
+    <!-- Production Laws -->
+    <h3 class="text-2xl font-bold">Production Laws</h3>
+    <p class="text-gray-200">
+      Another legal issue is for sports: in order to put certain players on cards, we will need to be granted permission from the AFL or from other sports leagues.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.afl.com.au/licensing-queries"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
 
-    <!-- 4. Innovation & Technology -->
-    <section class="glass-panel glass p-12">
-      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Innovation & Technology</h2>
-      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
-      <div class="default-content space-y-4">
-        <p class="text-gray-200">AI‑driven material forecasting and customer loyalty systems optimize production. We explore augmented reality integrations and rapid prototyping to bring your card concepts to market faster.</p>
-      </div>
-      <div class="expanded-content space-y-4">
-        <p class="text-gray-200">Full-screen details for Innovation & Technology. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
-      </div>
-    </section>
+<!-- 2. Societal Trends -->
+<section class="glass-panel glass p-12">
+  <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Societal Trends</h2>
+  <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+  <div class="default-content space-y-4">
+    <p class="text-gray-200">We embrace eco-friendly materials and recycled packaging to meet consumer values. Limited-edition drops and rare insert cards build hype and engage both casual and hardcore collectors.</p>
+  </div>
+  <div class="expanded-content space-y-4">
+    <!-- Societal Attitudes -->
+    <h3 class="text-2xl font-bold">Societal Attitudes</h3>
+    <p class="text-gray-200">
+      Being sustainable by using recycled paper and recycled materials to create our products. Also by using packaging which is made from recycled and recyclable materials.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.news.com.au/lifestyle/food/eat/aussies-divided-as-woolies-sells-next-level-reusable-bag-for-20/news-story/8bcb0bb0f11c0c472eb27291d0d6bdfd"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
 
-    <!-- 5. Global Reach -->
-    <section class="glass-panel glass p-12">
-      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Global Reach</h2>
-      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
-      <div class="default-content space-y-4">
-        <p class="text-gray-200">Our online storefront and distribution network spans multiple continents, making premium card products accessible worldwide.</p>
-      </div>
-      <div class="expanded-content space-y-4">
-        <p class="text-gray-200">Full-screen details for Global Reach. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
-      </div>
-    </section>
+    <!-- Trends of Society -->
+    <h3 class="text-2xl font-bold">Trends of Society</h3>
+    <p class="text-gray-200">
+      We won't create basic designs; we will make complex and innovative designs. We will achieve this by using trends such as having limited-edition releases that society values.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://sports.yahoo.com/article/lewis-hamilton-signs-rare-trading-162210748.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAADMrE4uqotJEYwdqMTyPRkVg40i3TPoFwe5wijEqMlSSfLOXIx9MHLSC287C1jbYe7XlR6hKaLW8sCxQsrkcBJBUpPoW9PONC-C0F1S7KjYVqM-kq27is_Z5nANDwmVBHNkoADBtg6FwBUk0ECxgzb5LUdZwzRLVGhO1t2mSRJYr"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
 
-    <!-- 6. CSR Initiatives -->
-    <section class="glass-panel glass p-12">
-      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Corporate Social Responsibility</h2>
-      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
-      <div class="default-content space-y-4">
-        <p class="text-gray-200">We source materials from ethically‑compliant suppliers, ensure fair labor practices, and invest in community sponsorships.</p>
-      </div>
-      <div class="expanded-content space-y-4">
-        <p class="text-gray-200">Full-screen details for CSR Initiatives. Nulla porttitor accumsan tincidunt. Pellentesque in ipsum id orci porta dapibus.</p>
-      </div>
-    </section>
+    <!-- Society Values and Trends -->
+    <h3 class="text-2xl font-bold">Society Values and Trends</h3>
+    <p class="text-gray-200">
+      We will make sure our products apply to a range of audiences such as making products for kids and die-hard collectors.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://selectaustralia.com.au/collections/new-releases"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
 
-    <!-- 7. Customer Needs -->
-    <section class="glass-panel glass p-12">
-      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Customer Needs</h2>
-      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
-      <div class="default-content space-y-4">
-        <p class="text-gray-200">We deliver high‑quality printing options, protective accessories, and budget‑friendly pricing tiers. Our flexible order volumes and discount programs reward repeat customers.</p>
-      </div>
-      <div class="expanded-content space-y-4">
-        <p class="text-gray-200">Full-screen details for Customer Needs.</p>
-      </div>
-    </section>
+<!-- 3. Economic Outlook -->
+<section class="glass-panel glass p-12">
+  <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Economic Outlook</h2>
+  <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+  <div class="default-content space-y-4">
+    <p class="text-gray-200">We adjust pricing and sourcing strategies in response to interest and tax rate fluctuations, ensuring affordability without compromising quality.</p>
+  </div>
+  <div class="expanded-content space-y-4">
+    <!-- Interest / Tax Rates -->
+    <h3 class="text-2xl font-bold">Interest / Tax Rates</h3>
+    <p class="text-gray-200">
+      When interest rates / tax rates increase, it will affect our business as we depend on discretionary spending. Conversely, when they decrease, customers have more disposable income to spend on our brand.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.afr.com/policy/economy/forget-interest-rates-tax-is-hurting-us-more-20250220-p5ldt9"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
 
-    <!-- 8. Competitive Advantage -->
-    <section class="glass-panel glass p-12">
-      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Competitive Advantage</h2>
-      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
-      <div class="default-content space-y-4">
-      <p class="text-gray-200">Rather than competing on price alone, we focus on bespoke designs and premium materials. Our agility allows us to pivot quickly to market trends and maintain a unique product offering.</p>
-      </div>
-      <div class="expanded-content space-y-4">
-      <p class="text-gray-200">Full-screen details for Competitive Advantage. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
-      </div>
-    </section>
+    <!-- Business Planning -->
+    <h3 class="text-2xl font-bold">Business Planning</h3>
+    <p class="text-gray-200">
+      Along with this, when interest and tax rates increase, it will limit the amount we can spend to grow the business. When they decrease, it will allow us the opportunity to expand or grow our business.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.sjp.co.uk/individuals/news/how-to-expand-your-business-despite-economic-headwinds"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
 
-    <!-- 9. Supply Chain -->
-    <section class="glass-panel glass p-12">
-      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Supply Chain</h2>
-      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
-      <div class="default-content space-y-4">
-        <p class="text-gray-200">We partner with sustainable material suppliers and maintain local production facilities for quality control. Strategic supplier diversification reduces risk and ensures timely fulfillment.</p>
-      </div>
-      <div class="expanded-content space-y-4">
-        <p class="text-gray-200">Full-screen details for Supply Chain. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
-      </div>
-    </section>
+    <!-- Exchange Rates -->
+    <h3 class="text-2xl font-bold">Exchange Rates</h3>
+    <p class="text-gray-200">
+      When exchange rates change favorably for our company, we will be able to purchase more from our suppliers. However, when they go against us, we may have to consider changing where we source our materials or limit spending to maintain good supplier relationships.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.delawareinc.com/blog/exchange-rates/"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
 
-    <!-- 10. Affinity & Industry Groups -->
-    <section class="glass-panel glass p-12">
-      <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Affinity & Industry Groups</h2>
-      <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
-      <div class="default-content space-y-4">
-        <p class="text-gray-200">We engage with environmental NGOs, trade associations, and unions to align our practices with societal best interests. Our memberships facilitate ongoing compliance and networking.</p>
-      </div>
-      <div class="expanded-content space-y-4">
-        <p class="text-gray-200">Full-screen details for Affinity & Industry Groups. Donec sollicitudin molestie malesuada.</p>
-      </div>
-    </section>
+    <!-- Confidence of Business -->
+    <h3 class="text-2xl font-bold">Confidence of Business</h3>
+    <p class="text-gray-200">
+      When we have high confidence as a business, it will allow us to make more risky but future-benefiting decisions. When we have low confidence, we will be more cautious about where we spend our money.
+    </p>
+  </div>
+</section>
+
+<!-- 4. Innovation & Technology -->
+<section class="glass-panel glass p-12">
+  <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Innovation & Technology</h2>
+  <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+  <div class="default-content space-y-4">
+    <p class="text-gray-200">AI-driven material forecasting and customer loyalty systems optimize production. We explore augmented reality integrations and rapid prototyping to bring your card concepts to market faster.</p>
+  </div>
+  <div class="expanded-content space-y-4">
+    <!-- Using Technology -->
+    <h3 class="text-2xl font-bold">Using Technology</h3>
+    <p class="text-gray-200">
+      We will start to use AI to prepare the amount of materials we need for our trading cards. Also, we will be able to use a rewards system through AI which calculates how much repeat customers can get off.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.forbes.com/sites/bernardmarr/2023/12/13/the-rise-of-generative-ai-in-design-innovations-and-challenges/"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Using Technology & the Future -->
+    <h3 class="text-2xl font-bold">Using Technology &amp; the Future</h3>
+    <p class="text-gray-200">
+      We will also look to use AI as a resource to help with customer service. This will help us save money and time not having to employ additional staff. For more complex issues, AI will help answer queries—eventually providing solutions to more advanced problems.
+    </p>
+
+    <!-- Design Helping & Ideas -->
+    <h3 class="text-2xl font-bold">Design Helping &amp; Ideas</h3>
+    <p class="text-gray-200">
+      For design ideas, we will be able to utilize AI to give us inspiration. This will allow us to save time while still having unique designs.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.forbes.com/sites/bernardmarr/2023/12/13/the-rise-of-generative-ai-in-design-innovations-and-challenges/"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Global Reach -->
+<section class="glass-panel glass p-12">
+  <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Global Reach</h2>
+  <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+  <div class="default-content space-y-4">
+    <p class="text-gray-200">Our online storefront and distribution network spans multiple continents, making premium card products accessible worldwide.</p>
+  </div>
+  <div class="expanded-content space-y-4">
+    <!-- Global Competitors -->
+    <h3 class="text-2xl font-bold">Global Competitors</h3>
+    <p class="text-gray-200">
+      We will have competitors who manufacture overseas. To combat this, we will also aim to get some materials from overseas but produce them here.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.msn.com/en-us/money/markets/u-s-loses-ground-as-china-targets-45-share-of-global-manufacturing-by-decade-s-end/ar-AA1Fn1cx?ocid=finance-verthp-feeds"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Overseas Materials -->
+    <h3 class="text-2xl font-bold">Overseas Materials</h3>
+    <p class="text-gray-200">
+      With getting our materials from overseas but producing here, it will help reduce the chance of any people from different countries stealing our ideas.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.gisreportsonline.com/r/critical-raw-materials-2/"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Global Marketing -->
+    <h3 class="text-2xl font-bold">Global Marketing</h3>
+    <p class="text-gray-200">
+      We can sell our products via online sales. This will allow us to reach a global market and increase sales potential.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.campaignasia.com/article/coca-cola-and-wpp-renew-global-marketing-partnership/502602"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Corporate Social Responsibility -->
+<section class="glass-panel glass p-12">
+  <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Corporate Social Responsibility</h2>
+  <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+  <div class="default-content space-y-4">
+    <p class="text-gray-200">We source materials from ethically-compliant suppliers, ensure fair labor practices, and invest in community sponsorships.</p>
+  </div>
+  <div class="expanded-content space-y-4">
+    <!-- Social Responsibility -->
+    <h3 class="text-2xl font-bold">Social Responsibility</h3>
+    <p class="text-gray-200">
+      When sourcing our materials from other countries, we will make sure we are sourcing them from places where workers are paid fairly to produce the materials. This ensures we are acting in society’s best interest.
+    </p>
+
+    <!-- Environmental Considerations -->
+    <h3 class="text-2xl font-bold">Environmental Considerations</h3>
+    <p class="text-gray-200">
+      We buy materials made from recycled paper, cardboard, and plastic to be more sustainable and reduce our carbon footprint.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.investopedia.com/ask/answers/041015/why-social-responsibility-important-business.asp"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Society’s Best Interests -->
+    <h3 class="text-2xl font-bold">Society’s Best Interests</h3>
+    <p class="text-gray-200">
+      We will sponsor local sports clubs—particularly youth Australian football clubs—to supply them with unique sports cards for their players and fans.
+    </p>
+    <!-- No iframe needed since this is a statement -->
+  </div>
+</section>
+
+<!-- 7. Customer Needs -->
+<section class="glass-panel glass p-12">
+  <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Customer Needs</h2>
+  <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+  <div class="default-content space-y-4">
+    <p class="text-gray-200">We deliver high-quality printing options, protective accessories, and budget-friendly pricing tiers. Our flexible order volumes and discount programs reward repeat customers.</p>
+  </div>
+  <div class="expanded-content space-y-4">
+    <!-- Customer Expectations -->
+    <h3 class="text-2xl font-bold">Customer Expectations</h3>
+    <p class="text-gray-200">
+      Customers expect a high-quality trading card. By offering varying releases that use special reflective materials or changing the thickness of the card, we can satisfy these needs. To do this, we have had to change some of our suppliers to be able to sell us these different materials.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://cdn.shopify.com/s/files/1/0323/6364/3013/files/AFL18S3_Supremacy_Flyer_FINAL_V3.pdf?v=1592360028"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Fair Pricing -->
+    <h3 class="text-2xl font-bold">Fair Pricing</h3>
+    <p class="text-gray-200">
+      Customers do not want to spend too much on our products. We will combat this by offering deals and promotions to maintain our reputation and encourage repeat business.
+    </p>
+    <!-- No iframe needed; purely explanatory -->
+
+    <!-- More Customer Expectations -->
+    <h3 class="text-2xl font-bold">More Customer Expectations</h3>
+    <p class="text-gray-200">
+      Customers want to be able to display these cards and keep them in perfect condition—cards are collectibles, not items to bend or fold. To help with this, we have created a range of protective and display materials.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://selectaustralia.com.au/collections/accessories"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Competitive Advantage -->
+<section class="glass-panel glass p-12">
+  <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Competitive Advantage</h2>
+  <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+  <div class="default-content space-y-4">
+    <p class="text-gray-200">Rather than competing on price alone, we focus on bespoke designs and premium materials. Our agility allows us to pivot quickly to market trends and maintain a unique product offering.</p>
+  </div>
+  <div class="expanded-content space-y-4">
+    <!-- Quality of Products -->
+    <h3 class="text-2xl font-bold">Quality of Products</h3>
+    <p class="text-gray-200">
+      We look at our competitors and, instead of being the cheapest option, we aim to be unique and create the highest-quality product possible. Focusing on quality often means we need to source higher-end materials and adjust our supplier relationships.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.regaltradingcards.com.au/collections/all-products"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Discounts on Prices -->
+    <h3 class="text-2xl font-bold">Discounts on Prices</h3>
+    <p class="text-gray-200">
+      Our competitors may slash prices to focus on volume, but we will keep a strong customer base by occasionally offering discounts—while still emphasizing our premium positioning.
+    </p>
+    <!-- No iframe needed; explanatory only -->
+
+    <!-- Australian Made & Sustainability -->
+    <h3 class="text-2xl font-bold">Australian Made &amp; Sustainability</h3>
+    <p class="text-gray-200">
+      We will have materials that are proudly “Australian made,” and some items will be fully sustainable to the environment. This will differentiate us from competitors and appeal to eco-conscious consumers.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://australianmade.com.au/licensees/register/"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Supply Chain -->
+<section class="glass-panel glass p-12">
+  <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Supply Chain</h2>
+  <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+  <div class="default-content space-y-4">
+    <p class="text-gray-200">We partner with sustainable material suppliers and maintain local production facilities for quality control. Strategic supplier diversification reduces risk and ensures timely fulfillment.</p>
+  </div>
+  <div class="expanded-content space-y-4">
+    <!-- Sourcing Sustainable Materials -->
+    <h3 class="text-2xl font-bold">Sourcing Sustainable Materials</h3>
+    <p class="text-gray-200">
+      We deeply consider the resources we use in our business to ensure they are sustainable for the environment. By making sure our materials are recycled or recyclable, we help care for the planet.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://www.greenamerica.org/save-trees/why-recycled-paper"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Fair Sourcing of Materials -->
+    <h3 class="text-2xl font-bold">Fair Sourcing of Materials</h3>
+    <p class="text-gray-200">
+      We ensure our suppliers pay their workers fairly and maintain ethical practices. We will audit supply chains regularly to confirm compliance.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://wise.com/us/blog/batchtransfer-how-to-pay-international-employees-guide"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Where We Get Our Materials -->
+    <h3 class="text-2xl font-bold">Where We Get Our Materials</h3>
+    <p class="text-gray-200">
+      We will carefully select countries from which to source our materials—such as choosing local Australian suppliers—to reduce transportation emissions and support the local economy.
+    </p>
+    <!-- No iframe needed; explanatory only -->
+  </div>
+</section>
+
+<!-- 10. Affinity & Industry Groups -->
+<section class="glass-panel glass p-12">
+  <h2 class="section-heading cursor-pointer text-3xl font-semibold mb-4">Affinity & Industry Groups</h2>
+  <button class="close-btn absolute top-4 right-4 hidden text-white text-2xl" aria-label="Close">&times;</button>
+  <div class="default-content space-y-4">
+    <p class="text-gray-200">We engage with environmental NGOs, trade associations, and unions to align our practices with societal best interests. Our memberships facilitate ongoing compliance and networking.</p>
+  </div>
+  <div class="expanded-content space-y-4">
+    <!-- Environmental Groups -->
+    <h3 class="text-2xl font-bold">Environmental Groups</h3>
+    <p class="text-gray-200">
+      To address concerns from environmental lobby groups, we will plan many of our products to be fully sustainable and ecologically friendly.
+    </p>
+
+    <!-- Australia Made Groups -->
+    <h3 class="text-2xl font-bold">Australia Made Groups</h3>
+    <p class="text-gray-200">
+      We will have all our products made within Australia. Having an “Australian Made” product targets many consumers who prefer locally made goods.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://yona.com.au/"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Trading Card Groups -->
+    <h3 class="text-2xl font-bold">Trading Card Groups</h3>
+    <p class="text-gray-200">
+      We will target markets such as Comic-Con or small-market trading groups to advertise our products to communities like Pokémon or Yu-Gi-Oh enthusiasts.
+    </p>
+    <div class="iframe-glass">
+      <iframe
+        src="https://collectaconusa.com/"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Enable scrolling for expanded fullscreen sections */
+  .glass-panel.expanded {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+</style>
 
     <!-- Contact -->
     <section id="contact" class="glass-panel glass p-12 text-center max-w-3xl mx-auto">
